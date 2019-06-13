@@ -61,10 +61,10 @@ class App extends Component {
 
   render(){
     return (
-      <div class="container">
+      <div className="container">
         <form onSubmit={this.handleSubmit}>
-          <input class="input" type="text" value={this.state.value} onChange={this.handleChange}/>
-          <input class="input" type="submit" value="Buscar"/>
+          <input className="input" type="text" value={this.state.value} onChange={this.handleChange}/>
+          <input className="input" type="submit" value="Buscar"/>
         </form>
         <WeatherInfo weather={this.state.weather} />
       </div>

@@ -1,3 +1,29 @@
 h1{
 	font-size: 250%;
+	font-weight: bold;
+}
+
+div.vcenter{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-flow: column;
+}
+
+div#info{
+	width: 40%;
+}
+
+p#temp-c{
+	font-size: 750%;
+	font-weight: 300;
+}
+
+p#temp-f{
+	font-size: 200%;
+	font-weight: 300;
+}
+
+sup{
+	font-size: 50%;
 }

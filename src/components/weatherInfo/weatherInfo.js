@@ -1,61 +1,60 @@
 import React from 'react'
 import { Container, Form } from 'react-bulma-components/full';
 import './weatherInfo.css'
+import humidityIcon from '../../resources/humidity.png'
+import windyIcon from '../../resources/windy.png'
 
 function WeatherInfo (props){
 
 	var getMonthName = (monthNumber) => {
 		let months = {
-			1: 'Enero',
-			2: 'Febrero',
-			3: 'Marzo',
-			4: 'Abril',
-			5: 'Mayo',
-			6: 'Junio',
-			7: 'Julio',
-			8: 'Agosto',
-			9: 'Septiembre',
-			10: 'Octubre',
-			11: 'Noviembre',
-			12: 'Diciembre',
+			0: 'January',
+			1: 'February',
+			2: 'March',
+			3: 'April',
+			4: 'May',
+			5: 'June',
+			6: 'July',
+			7: 'August',
+			8: 'September',
+			9: 'October',
+			10: 'November',
+			11: 'December',
 		}
 		return months[monthNumber];
 	}
 
 	var getDayOfWeekName = (dayNumber) => {
 		let daysOfWeek = {
-			1: 'Lunes',
-			2: 'Martes',
-			3: 'Miércoles',
-			4: 'Jueves',
-			5: 'Viernes',
-			6: 'Sábado',
-			7: 'Domingo',
+			1: 'Monday',
+			2: 'Tuesday',
+			3: 'Wednesday',
+			4: 'Thursday',
+			5: 'Friday',
+			6: 'Saturday',
+			0: 'Sunday',
 		}
 		return daysOfWeek[dayNumber];
 	}
 
-	let date = props.weather.date;
-	let dateText = ``
-
+	let date = new Date(props.weather.date);
+	let dateText = `${getDayOfWeekName(date.getDay())}, ${date.getDate()} ${getMonthName(date.getMonth())}`
 	return (
-		<div id="info" class="container">
+		<div id="info" className="container">
 			<h1 id="city">{props.weather.city}</h1>
 			<h3 id="date">{dateText}</h3>
-			<div id="card" class="columns is-centered">
-				<div id="image" class="column has-text-centered">
+			<div id="card" className="columns is-centered">
+				<div id="temperature" className="column has-text-centered vcenter">
+					<p id="temp-c">{props.weather.temp_c}<sup id="supp">℃</sup></p>
+					{/*<p id="temp-f">{props.weather.temp_f}<sup>℉</sup></p>*/}
+				</div>
+				<div id="image" className="column has-text-centered vcenter">
+					<p id="text">{props.weather.text}</p>
 					<img src={props.weather.src} alt={props.weather.text}/>
-					<p id="text">{dateText}</p>
+					<p><img src={humidityIcon} alt="humidity" />{props.weather.humidity + '%'}</p>
+					<p><img src={windyIcon} alt="wind" />{props.weather.feelslike_c + ' km/h'}</p>
 				</div>
-				<div id="temperature" class="column has-text-centered">
-					<p id="temp-c">{props.weather.temp_c}</p>
-					<p id="temp-f">{props.weather.temp_f}</p>
-				</div>
-				<div id="details" class="column has-text-centered">
-					<p><strong>Humidity: </strong>{props.weather.humidity}</p>
-					<p><strong>Feels like: </strong>{props.weather.feelslike_c}</p>
-				</div>
-			</div> 
+			</div>  
 		</div>
 	);
 }
