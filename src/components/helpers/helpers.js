@@ -29,7 +29,14 @@ const helpers = {
 			0: 'Sunday',
 		}
 		return daysOfWeek[dayNumber];
-    }
+	},
+	
+	getQuickLookCities: [
+		"Bogota",
+		"Mendoza",
+		"Buenos Aires",
+		"Lima"
+	]
 }
 
 export default helpers;

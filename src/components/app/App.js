@@ -2,8 +2,10 @@ import React, {Component} from 'react';
 import Axios from 'axios';
 import WeatherInfo from '../weatherInfo/weatherInfo'
 import WeatherCard from '../weatherCard/weatherCard'
+import QuickCard from '../quickCard/quickCard'
 import { Container, Form } from 'react-bulma-components/full';
 import './App.scss';
+import helpers from '../helpers/helpers';
 
 class App extends Component {
 
@@ -86,6 +88,14 @@ class App extends Component {
           <input className="input" type="text" value={this.state.value} onChange={this.handleChange}/>
           <input className="input" type="submit" value="search" />
         </form>
+        <div>
+          <p>Quick look</p>
+          <div className="columns">
+            {
+              helpers.getQuickLookCities.map((f,i) => <QuickCard key={i} city={f}/>)
+            }
+          </div>
+        </div>
         <WeatherInfo weather={this.state.weather} />
         <div className="columns">
           {
