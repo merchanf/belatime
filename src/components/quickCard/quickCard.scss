@@ -1,8 +1,21 @@
 .quick-card{
-	display: flex;
-	flex-flow: row;
-	justify-content: center;
 	align-items: center;
-	padding-left: 3%;
-	padding-right: 3%;
+	background-color: white;
+	border-color: grey;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	border-width: 1px;
+	display: flex;
+	height: 40px;
+	justify-content: center;
+	margin-left: 2%;
+	margin-right: 2%;
+	height: auto;
+
+	img{
+		width: 15px;
+		margin-right: 5px;
+	}
 }

@@ -3,7 +3,6 @@ import Axios from 'axios';
 import WeatherInfo from '../weatherInfo/weatherInfo'
 import WeatherCard from '../weatherCard/weatherCard'
 import QuickCard from '../quickCard/quickCard'
-import { Container, Form } from 'react-bulma-components/full';
 import './App.scss';
 import helpers from '../helpers/helpers';
 
@@ -17,6 +16,7 @@ class App extends Component {
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.changeCity = this.changeCity.bind(this);
   }
 
   handleChange(event) {
@@ -27,6 +27,12 @@ class App extends Component {
     event.preventDefault();
     this.setState({
       weather: await this.getWeatherForecast(this.state.city)
+    })
+  }
+
+  async changeCity(city){
+    this.setState({
+      weather: await this.getWeatherForecast(city)
     })
   }
 
@@ -88,11 +94,11 @@ class App extends Component {
           <input className="input" type="text" value={this.state.value} onChange={this.handleChange}/>
           <input className="input" type="submit" value="search" />
         </form>
-        <div>
-          <p>Quick look</p>
-          <div className="columns">
+        <div id="quick-look" className="is-centered">
+          <p>Most searched</p>
+          <div  className="cards">
             {
-              helpers.getQuickLookCities.map((f,i) => <QuickCard key={i} city={f}/>)
+              helpers.getQuickLookCities.map((f,i) => <QuickCard key={i} city={f} changeCity={this.changeCity}/>)
             }
           </div>
         </div>

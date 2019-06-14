@@ -1,13 +1,17 @@
+$break-small: 640px;
+
 .app{
 	form{
 		display: flex;
 		flex-flow: row;
 		width: 50%;
-		margin: 3% auto 3% auto;
+		min-width: 300px;
+		margin: 2% auto 2% auto;
 
 		input{
 			&[type="submit"]{
 				width: 15%;
+				min-width: 75px;
 				border-left: 0;
 				border-top-right-radius: 50px;
 				border-bottom-right-radius: 50px;
@@ -20,5 +24,15 @@
 				border-right: 0;
 			}
 		}
+	}
+	
+	div#quick-look{
+		margin-bottom: 1%;
+
+		.cards{
+			display: flex;
+			flex-wrap: wrap;
+			margin-top: 1%; 
+		}		
 	}
 }
