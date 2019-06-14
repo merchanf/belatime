@@ -1,0 +1,24 @@
+.app{
+	form{
+		display: flex;
+		flex-flow: row;
+		width: 50%;
+		margin: 3% auto 3% auto;
+
+		input{
+			&[type="submit"]{
+				width: 15%;
+				border-left: 0;
+				border-top-right-radius: 50px;
+				border-bottom-right-radius: 50px;
+			}
+
+			&[type="text"]{
+				width: 85%;
+				border-top-left-radius: 50px;
+				border-bottom-left-radius: 50px;
+				border-right: 0;
+			}
+		}
+	}
+}
