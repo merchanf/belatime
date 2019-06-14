@@ -24,6 +24,20 @@ p#temp-f{
 	font-weight: 300;
 }
 
+div#image{
+	padding-left: 50px;
+}
+
+p.infoNumbers{
+	font-size: 20px;
+	margin-left:0;
+	margin-right:auto;
+} 
+
+p img{
+	margin-right: 15px;
+}
+
 sup{
 	font-size: 50%;
 }

@@ -3,6 +3,8 @@ import { Container, Form } from 'react-bulma-components/full';
 import './weatherInfo.css'
 import humidityIcon from '../../resources/humidity.png'
 import windyIcon from '../../resources/windy.png'
+import cloudiness from '../../resources/cloudiness.png'
+import windDegree from '../../resources/windDegree.png'
 
 function WeatherInfo (props){
 
@@ -46,13 +48,14 @@ function WeatherInfo (props){
 			<div id="card" className="columns is-centered">
 				<div id="temperature" className="column has-text-centered vcenter">
 					<p id="temp-c">{props.weather.temp_c}<sup id="supp">℃</sup></p>
+					<p id="text">{props.weather.text}</p>
 					{/*<p id="temp-f">{props.weather.temp_f}<sup>℉</sup></p>*/}
 				</div>
-				<div id="image" className="column has-text-centered vcenter">
-					<p id="text">{props.weather.text}</p>
-					<img src={props.weather.src} alt={props.weather.text}/>
-					<p><img src={humidityIcon} alt="humidity" />{props.weather.humidity + '%'}</p>
-					<p><img src={windyIcon} alt="wind" />{props.weather.feelslike_c + ' km/h'}</p>
+				<div id="image" className="column vcenter">				
+					<p class="infoNumbers "><img src={humidityIcon} alt="humidity" />{props.weather.humidity + '%'}</p>
+					<p class="infoNumbers"><img src={windyIcon} alt="wind speed" />{props.weather.wind_kph + ' km/h'}</p>
+					<p class="infoNumbers"><img src={windDegree} alt="wind temperature" />{props.weather.feelslike_c + ' ℃'}</p>
+					<p class="infoNumbers"><img src={cloudiness} alt="cloudiness" />{props.weather.cloud + '%'}</p>
 				</div>
 			</div>  
 		</div>

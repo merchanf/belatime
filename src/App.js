@@ -53,9 +53,11 @@ class App extends Component {
       text: data.current.condition.text,
       temp_c: data.current.temp_c,
       temp_f: data.current.temp_f,
+      cloud: data.current.cloud,
       humidity: data.current.humidity,
       feelslike_c: data.current.feelslike_c,
-      feelslike_f: data.current.feelslike_f
+      feelslike_f: data.current.feelslike_f,
+      wind_kph: data.current.wind_kph,
     }
   }
 
