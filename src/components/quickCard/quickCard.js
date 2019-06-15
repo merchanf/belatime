@@ -10,8 +10,8 @@ class QuickCard extends Component{
 
 	render(){
 		return (
-			<button className="quick-card column" onClick={((e) => this.handleClick(e, this.props))}>
-				<img src={location} alt="location"/>
+			<button className='quick-card column' onClick={((e) => this.handleClick(e, this.props))}>
+				<img src={location} alt='location'/>
 				<p>{this.props.city}</p>
 			</button>
 		);

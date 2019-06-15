@@ -1,6 +1,6 @@
 const helpers = {
 
-    getMonthName: function(monthNumber){
+    getMonthName(monthNumber){
 		let months = {
 			0: 'January',
 			1: 'February',
@@ -18,7 +18,7 @@ const helpers = {
 		return months[monthNumber];
 	},
 	
-    getDayOfWeekName: function(dayNumber){
+    getDayOfWeekName(dayNumber){
 		let daysOfWeek = {
 			1: 'Monday',
 			2: 'Tuesday',
@@ -32,10 +32,10 @@ const helpers = {
 	},
 	
 	getQuickLookCities: [
-		"Bogota",
-		"Mendoza",
-		"Buenos Aires",
-		"Lima"
+		'Bogota',
+		'Mendoza',
+		'Buenos Aires',
+		'Lima'
 	]
 }
 

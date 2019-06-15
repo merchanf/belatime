@@ -5,14 +5,14 @@
     
     .center{
 
+        align-items: center;
         display: flex;
         justify-content: flex-end;
-        align-items: center;
 
         img{
-            width: auto; 
             height: 75%; 
             object-fit: contain;
+            width: auto; 
         }
 
         p{

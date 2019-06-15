@@ -1,5 +1,5 @@
 import React from 'react';
-import TestRenderer from "react-test-renderer";
+import TestRenderer from 'react-test-renderer';
 import WeatherInfo from './weatherInfo';
 
 it('Renders the actual weather', () => {

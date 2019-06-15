@@ -81,12 +81,11 @@ class App extends Component {
   }
 
   render(){
-
     let weather;
     if(!this.state.error && this.state.weather !== undefined && this.state.weather.forecast !== undefined){
       weather = <>
         <WeatherInfo weather={this.state.weather} />
-        <div className="columns">
+        <div className='columns'>
           {this.state.weather.forecast.map((f,i) => <WeatherCard key={i} weather={f}/>)}
         </div>
       </>
@@ -95,13 +94,13 @@ class App extends Component {
     }
 
     return (
-      <div className="container app">
-        <form className="is-centered" onSubmit={this.handleSubmit}>
-          <input className="input" type="text" value={this.state.value} onChange={this.handleChange} placeholder="Which city forecast do you want to see today?"/>
+      <div className='container app'>
+        <form className='is-centered' onSubmit={this.handleSubmit}>
+          <input className='input' type='text' value={this.state.value} onChange={this.handleChange} placeholder='Which city forecast do you want to see today?'/>
         </form>
-        <div id="quick-look" className="is-centered">
+        <div id='quick-look' className='is-centered'>
           <p>Most searched</p>
-          <div  className="cards">
+          <div  className='cards'>
             {
               helpers.getQuickLookCities.map((f,i) => <QuickCard key={i} city={f} changeCity={this.changeCity}/>)
             }
