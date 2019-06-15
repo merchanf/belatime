@@ -17,24 +17,19 @@ class App extends Component {
       error: false
     }
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.changeCity = this.changeCity.bind(this);
   }
 
   async handleChange(event) {
-    this.setState({city: event.target.value});
-    /*this.setState({
-      weather: await this.getWeatherForecast(this.state.city)
-    })*/
+    let city = event.target.value
+    if(city === '')
+      city = 'bogota'
+    this.setState({
+      weather: await this.getWeatherForecast(city)
+    })
   }
-
-  async handleSubmit(event) {
-    event.preventDefault();
-    console.log(this.state.city);
-    this.changeCity(this.state.city);
-  }
-
   async changeCity(city){
+    
     this.setState({
       weather: await this.getWeatherForecast(city)
     })
@@ -47,7 +42,6 @@ class App extends Component {
   }
  
   async getWeatherForecast(cityName){
-    
     let weather, forecast;
     try {    
       let response = await Axios.get(`http://api.apixu.com/v1/forecast.json?key=8c3c7daa94234a59bd7140955182012&q=${cityName}&days=7`);
@@ -103,8 +97,7 @@ class App extends Component {
     return (
       <div className="container app">
         <form className="is-centered" onSubmit={this.handleSubmit}>
-          <input className="input" type="text" value={this.state.value} onChange={this.handleChange}/>
-          <input className="input" type="submit" value="search" />
+          <input className="input" type="text" value={this.state.value} onChange={this.handleChange} placeholder="Which city forecast do you want to see today?"/>
         </form>
         <div id="quick-look" className="is-centered">
           <p>Most searched</p>

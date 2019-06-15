@@ -4,23 +4,17 @@ $break-small: 640px;
 	form{
 		display: flex;
 		flex-flow: row;
-		width: 50%;
-		min-width: 300px;
+		width: 80%;
+		min-width: 350px;
 		margin: 2% auto 2% auto;
 
 		input{
-			&[type="submit"]{
-				width: 15%;
-				min-width: 75px;
-				border-left: 0;
-				border-top-right-radius: 50px;
-				border-bottom-right-radius: 50px;
-			}
-
 			&[type="text"]{
 				width: 85%;
 				border-top-left-radius: 50px;
 				border-bottom-left-radius: 50px;
+				border-top-right-radius: 50px;
+				border-bottom-right-radius: 50px;
 				border-right: 0;
 			}
 		}
