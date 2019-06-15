@@ -1,0 +1,23 @@
+
+#error{
+
+    display: flex;
+    
+    .center{
+
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        img{
+            width: auto; 
+            height: 75%; 
+            object-fit: contain;
+        }
+
+        p{
+            font-size: 250%;
+            text-align: center;
+        }
+    }
+}

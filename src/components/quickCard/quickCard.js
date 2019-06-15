@@ -3,13 +3,8 @@ import location from '../../resources/location.png'
 import './quickCard.scss'
 
 class QuickCard extends Component{
-
-	constructor(){
-		super();
-	}
-
+	
 	handleClick = (e, data) => {
-		// access to e.target here
 		this.props.changeCity(data.city);
 	}
 
